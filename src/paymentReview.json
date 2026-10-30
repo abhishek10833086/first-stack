@@ -1,0 +1,120 @@
+{
+  "title": "Payment Review",
+  "status": {
+    "code": "PENDING_APPROVAL",
+    "label": "Pending Approval"
+  },
+  "description": "Review the payment details, check for exceptions and take an action.",
+  "currentPayment": 1,
+  "totalPayments": 1,
+  "exceptionSummary": {
+    "count": 1,
+    "severity": "high",
+    "message": "1 exception detected",
+    "description": "Please review the details below before proceeding."
+  },
+  "paymentInstruction": {
+    "paymentId": "PAY-2025-00473",
+    "paymentType": "Wire Transfer",
+    "amount": 1250000,
+    "currency": "USD",
+    "formattedAmount": "USD 1,250,000.00",
+    "valueDate": "2025-04-30",
+    "purpose": "Equipment Purchase",
+    "customer": "ABC Manufacturing Ltd.",
+    "initiatedBy": "R. Mehta",
+    "initiatedOn": "2025-04-28T10:14:00"
+  },
+  "beneficiaryInformation": {
+    "beneficiaryName": "Global Machinery LLC",
+    "accountNumber": "•••• •••• •••• 4587",
+    "bankName": "First National Bank",
+    "bankCountry": "United States",
+    "swiftBic": "FNBKUS33",
+    "bankAddress": "100 Main St., New York, NY 10001, United States"
+  },
+  "approvalState": {
+    "currentStep": "UNDER_REVIEW",
+    "steps": [
+      {
+        "order": 1,
+        "id": "INITIATED",
+        "label": "Initiated",
+        "status": "completed",
+        "actor": "R. Mehta",
+        "timestamp": "2025-04-28T10:14:00"
+      },
+      {
+        "order": 2,
+        "id": "UNDER_REVIEW",
+        "label": "Under Review",
+        "status": "current",
+        "actor": "Payment Ops",
+        "timestamp": "2025-04-28T16:20:00"
+      },
+      {
+        "order": 3,
+        "id": "APPROVED",
+        "label": "Approved",
+        "status": "pending",
+        "actor": null,
+        "timestamp": null
+      },
+      {
+        "order": 4,
+        "id": "RELEASED",
+        "label": "Released",
+        "status": "pending",
+        "actor": null,
+        "timestamp": null
+      }
+    ]
+  },
+  "missingMandatoryData": {
+    "status": "valid",
+    "count": 0,
+    "fields": [],
+    "message": "No missing mandatory data",
+    "description": "All required fields are completed."
+  },
+  "deviations": [
+    {
+      "id": "EXC-001",
+      "type": "HISTORICAL_AMOUNT_DEVIATION",
+      "severity": "high",
+      "title": "Amount is higher than customer's historical average",
+      "description": "This payment is 3.5x higher than the customer's average payment amount for similar vendors.",
+      "paymentAmount": 1250000,
+      "historicalAverage": 350000,
+      "currency": "USD",
+      "ratio": 3.57,
+      "ruleId": "RULE-AMOUNT-01"
+    }
+  ],
+  "recommendedReviewAction": {
+    "type": "SEEK_ADDITIONAL_VERIFICATION",
+    "label": "Seek additional verification",
+    "steps": [
+      "Confirm the payment amount and purpose with the customer.",
+      "Validate supporting documents such as invoice or contract.",
+      "Ensure beneficiary details are correct."
+    ]
+  },
+  "actions": [
+    {
+      "id": "request-more-information",
+      "label": "Request More Information",
+      "enabled": true
+    },
+    {
+      "id": "reject",
+      "label": "Reject",
+      "enabled": true
+    },
+    {
+      "id": "send-for-approval",
+      "label": "Send for Approval",
+      "enabled": true
+    }
+  ]
+}
