@@ -1,22 +1,12 @@
-import { useMUIThemeContext, YinYangThemesMenu } from "@abhishekzambare/mui";
-import {
-  Button,
-  Stack,
-  TextField,
-  ThemeProvider,
-  Tooltip,
-  Typography,
-} from "@mui/material";
-import { useMainContext } from "./MainContextProvider";
+import { useMUIThemeContext } from "@abhishekzambare/mui";
+import { ThemeProvider } from "@mui/material";
 import { useMainServices } from "./MainServices";
 import { useEffect } from "react";
-import { MUITable } from "@abhishekzambare/mui-table";
 import PaymentReview from "./PaymentReview";
 import paymentReviewData from "./paymentReview.json";
 
 function App() {
   const theme = useMUIThemeContext();
-  const MainContext = useMainContext();
   const Mainservices = useMainServices();
 
   useEffect(() => {

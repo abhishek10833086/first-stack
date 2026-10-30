@@ -14,7 +14,6 @@ import {
   Link,
   Stack,
   Step,
-  StepContent,
   StepLabel,
   Stepper,
   Typography,
